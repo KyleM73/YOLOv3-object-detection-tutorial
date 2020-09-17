@@ -6,6 +6,7 @@ import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import cv2
 import time
+import tensorflow as tf
 
 
 
@@ -43,7 +44,9 @@ class YOLO(object):
         self.__dict__.update(kwargs) # and update with user overrides
         self.class_names = self._get_class()
         self.anchors = self._get_anchors()
-        self.sess = K.get_session()
+        self.sess = tf.Session()#
+        K.set_session(sess)#
+        #self.sess = K.get_session()
         self.boxes, self.scores, self.classes = self.generate()
 
     def _get_class(self):
