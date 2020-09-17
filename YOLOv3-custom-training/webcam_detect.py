@@ -3,6 +3,8 @@ import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import cv2
 import time
+%matplotlib inline
+from matplotlib import pyplot as plt
 
 
 import numpy as np
@@ -184,9 +186,10 @@ if __name__=="__main__":
         r_image, ObjectsList = yolo.detect_img(frame)
 
         # show us frame with detection
-        cv2.imshow("Web cam input", r_image)
+        #cv2.imshow("Web cam input", r_image)
+        plt.imshow(r_image)
         if cv2.waitKey(25) & 0xFF == ord("q"):
-            cv2.destroyAllWindows()
+            #cv2.destroyAllWindows()
             break
 
         # calculate FPS
@@ -199,5 +202,5 @@ if __name__=="__main__":
 
 
     cap.release()
-    cv2.destroyAllWindows()
+    #cv2.destroyAllWindows()
     yolo.close_session()
