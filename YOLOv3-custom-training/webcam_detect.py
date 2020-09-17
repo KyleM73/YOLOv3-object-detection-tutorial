@@ -1,10 +1,12 @@
+%matplotlib inline
+from matplotlib import pyplot as plt
+
 import colorsys
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import cv2
 import time
-%matplotlib inline
-from matplotlib import pyplot as plt
+
 
 
 import numpy as np
