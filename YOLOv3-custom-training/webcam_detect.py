@@ -10,7 +10,8 @@ import time
 
 
 import numpy as np
-from keras import backend as K
+#from keras import backend as K
+import keras.backend.tensorflow_backend as K
 from keras.models import load_model
 from keras.layers import Input
 
