@@ -44,7 +44,7 @@ class YOLO(object):
         self.__dict__.update(kwargs) # and update with user overrides
         self.class_names = self._get_class()
         self.anchors = self._get_anchors()
-        self.sess = tf.Session()#
+        self.sess = tf.compat.v1.Session()#
         K.set_session(sess)#
         #self.sess = K.get_session()
         self.boxes, self.scores, self.classes = self.generate()
